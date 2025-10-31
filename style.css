@@ -1,0 +1,201 @@
+/* ========== Светлая тема — переменные ========== */
+:root{
+  --brand:#0f172a;
+  --text:#111;
+  --muted:#6b7280;
+  --bg:#ffffff;
+  --panel:#ffffff;
+  --border:#eef2f7;
+
+  --accent:#2563eb;
+  --accent-2:#7c3aed;
+
+  --radius:18px;
+  --shadow:0 10px 30px rgba(2,6,23,.08);
+  --shadow-strong:0 20px 40px rgba(2,6,23,.14);
+  --shadow-soft:0 8px 20px rgba(2,6,23,.06);
+
+  --bg-grad-1: radial-gradient(80rem 40rem at -10% -10%, #eef2ff 0%, transparent 45%);
+  --bg-grad-2: radial-gradient(80rem 40rem at 120% -10%, #f5e8ff 0%, transparent 45%);
+
+  --link:#6d2dfc;
+  --link-hover:#4318ff;
+}
+
+html{scroll-behavior:smooth;}
+*{box-sizing:border-box;}
+body{
+  margin:0; font:16px/1.6 Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  color:var(--text); background:var(--bg);
+  background-image: var(--bg-grad-1), var(--bg-grad-2); background-attachment: fixed;
+}
+img{max-width:100%; display:block; border-radius:14px;}
+.container{width:min(1100px,92%); margin:0 auto;}
+
+/* ========== Тёмная тема — переопределения ========== */
+.theme-dark{
+  --text:#e5e7eb;
+  --muted:#9aa3b2;
+  --bg:#0b111e;
+  --panel:#0f172a;
+  --border:#1f2a44;
+
+  --shadow:0 10px 30px rgba(0,0,0,.4);
+  --shadow-strong:0 20px 40px rgba(0,0,0,.5);
+  --shadow-soft:0 8px 20px rgba(0,0,0,.35);
+
+  --bg-grad-1: radial-gradient(80rem 40rem at -10% -10%, rgba(37,99,235,.14) 0%, transparent 45%);
+  --bg-grad-2: radial-gradient(80rem 40rem at 120% -10%, rgba(124,58,237,.12) 0%, transparent 45%);
+
+  --link:#8aa2ff;
+  --link-hover:#b4bfff;
+}
+
+/* если пользователь не выбирал — можно оставить media-prefers в JS; здесь больше ничего не нужно */
+
+/* === Шапка и меню === */
+.site-header{
+  position:sticky; top:0; z-index:10;
+  background:color-mix(in srgb, var(--panel) 88%, transparent); backdrop-filter: blur(8px);
+  border-bottom:1px solid var(--border); transition: box-shadow .25s, background .25s;
+}
+.site-header.scrolled{ box-shadow: var(--shadow); }
+.header-inner{display:flex; align-items:center; justify-content:space-between; padding:12px 0;}
+.logo img{height:40px;}
+.main-nav a{
+  text-decoration:none; color:var(--text); margin:0 12px; padding:6px 8px; border-radius:10px;
+  transition: all .25s ease;
+}
+.main-nav a:hover{background:color-mix(in srgb, var(--panel) 70%, #fff 30%); color:var(--accent); transform: translateY(-1px);}
+.main-nav a.active{color:var(--accent); background:color-mix(in srgb, var(--panel) 60%, #fff 40%); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 30%, transparent);}
+.burger{display:none; width:40px; height:40px; background:linear-gradient(180deg, color-mix(in srgb, var(--panel) 60%, #fff 40%), var(--panel));
+  border:1px solid var(--border); border-radius:12px; transition: transform .2s;}
+.burger:active{transform: scale(.96);}
+
+/* Переключатель темы — текст «Светлая / Тёмная» */
+.theme-toggle{
+  margin-left:8px;
+  height:42px;
+  padding:0 12px;
+  min-width:150px;
+  font-weight:600; font-size:14px;
+  border-radius:12px; border:1px solid var(--border);
+  background:var(--panel); color:var(--text);
+  display:inline-flex; align-items:center; justify-content:center;
+  cursor:pointer; transition: transform .2s, box-shadow .2s, background .2s;
+}
+.theme-toggle:hover{ transform:translateY(-1px); box-shadow: var(--shadow-soft); }
+
+/* === Герой === */
+.hero{
+  position:relative; padding:86px 0 64px; color:var(--text);
+  background:
+    radial-gradient(90rem 40rem at -10% -20%, color-mix(in srgb, #e0e7ff, var(--bg)) 0%, transparent 45%),
+    radial-gradient(60rem 30rem at 120% -10%, color-mix(in srgb, #f3e8ff, var(--bg)) 0%, transparent 50%),
+    linear-gradient(180deg,var(--bg), color-mix(in srgb, var(--bg) 70%, #f9fbff 30%));
+  overflow:hidden;
+}
+.hero::after{content:""; position:absolute; inset:-40% -10% auto -10%; height:70%;
+  background: conic-gradient(from 180deg at 50% 50%, var(--accent), var(--accent-2), var(--accent));
+  filter: blur(80px) opacity(.15); animation: spin 18s linear infinite; pointer-events:none;}
+@keyframes spin{to{transform: rotate(360deg);}}
+.hero h1{font-size:46px; line-height:1.15; margin:0 0 10px; letter-spacing:-.02em;}
+.lead{max-width:760px; color:var(--muted); margin:0 0 18px; font-size:18px;}
+
+/* === Кнопки и ссылки === */
+.btn,.btn-outline{
+  position:relative; display:inline-block; padding:12px 18px; border-radius:14px; text-decoration:none;
+  transition: transform .18s, box-shadow .25s, background .25s, color .25s; will-change: transform;
+}
+.btn{background: linear-gradient(90deg, var(--accent), var(--accent-2)); color:#fff; box-shadow: var(--shadow);}
+.btn:hover{transform: translateY(-2px); box-shadow: var(--shadow-strong);}
+.btn:active{transform: translateY(0);}
+.btn-outline{border:1px solid color-mix(in srgb, var(--accent) 65%, transparent); color:var(--accent); background: var(--panel);}
+.btn-outline:hover{background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 10%, transparent), color-mix(in srgb, var(--accent-2) 10%, transparent)); color:var(--text);}
+.btn::after,.btn-outline::after{content:""; position:absolute; inset:0; border-radius:inherit; opacity:0;
+  background: radial-gradient(120px 120px at var(--x,50%) var(--y,50%), rgba(255,255,255,.35), transparent 60%); transition: opacity .5s;}
+.btn:active::after,.btn-outline:active::after{opacity:1; transition: opacity .2s;}
+.link{color:var(--link); text-decoration:none; border-bottom:1px solid color-mix(in srgb, var(--link) 55%, transparent);}
+.link:hover{color:var(--link-hover); border-color:color-mix(in srgb, var(--link-hover) 60%, transparent);}
+
+/* === Секции / карточки === */
+.section{padding:56px 0; position:relative;}
+main>.section:nth-of-type(even){background:linear-gradient(180deg, color-mix(in srgb, var(--bg) 90%, #fff 10%) 0%, color-mix(in srgb, var(--bg) 95%, #fbfbff 5%) 100%);}
+.section h2{margin:0 0 8px; font-size:30px; letter-spacing:-.01em; color:var(--text);}
+.section h2::after{content:""; display:block; width:64px; height:3px; border-radius:999px; margin-top:8px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2)); box-shadow: 0 6px 16px color-mix(in srgb, var(--accent) 25%, transparent);}
+
+.card{
+  border:1px solid var(--border); border-radius:var(--radius); padding:18px; background:var(--panel);
+  box-shadow: var(--shadow); transition: transform .25s, box-shadow .25s, border-color .25s, translate .25s; color:var(--text);
+}
+.card:hover{transform: translateY(-4px); border-color: color-mix(in srgb, var(--accent) 22%, transparent); box-shadow: var(--shadow-strong); translate:0 -1px;}
+.grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+.check{padding-left:18px;} .check li{margin:8px 0; color:var(--text);}
+
+/* === Кейсы — центр и фикс ширина карточки === */
+.cases-grid{
+  display:flex; flex-wrap:wrap; gap:18px; justify-content:center; margin-top:18px;
+}
+.case-card{
+  width:300px; max-width:90vw;
+  border:1px solid var(--border); border-radius:var(--radius); padding:10px; background:var(--panel);
+  box-shadow: var(--shadow-soft); transition: transform .25s, box-shadow .25s, border-color .25s;
+  display:flex; flex-direction:column; color:var(--text);
+}
+.case-card:hover{transform: translateY(-6px) scale(1.01); border-color: color-mix(in srgb, var(--accent) 22%, transparent); box-shadow: var(--shadow-strong);}
+.case-card .thumb{position:relative; aspect-ratio:4/3; width:100%; border-radius:12px; overflow:hidden; background:#fff; margin-bottom:8px;}
+.case-card .thumb img{width:100%; height:100%; object-fit:cover; display:block; transition: transform .35s;}
+.case-card:hover .thumb img{ transform: scale(1.03); }
+.case-card .thumb img.logo{ object-fit:contain; padding:8px; background:#fff; transform:none; }
+.case-card h3{margin:2px 0 6px; font-size:17px;}
+.case-card .muted{color:var(--muted); margin:0 0 6px;}
+
+/* Кнопка под кейсами — больше отступ */
+#cases .center{ margin-top:28px; }
+
+/* === Теги-фильтры === */
+.tags{display:flex; flex-wrap:wrap; gap:10px; margin-top:10px;}
+.tag{
+  background:color-mix(in srgb, var(--panel) 65%, #fff 35%); padding:8px 12px; border-radius:999px; border:1px solid var(--border); cursor:pointer;
+  transition: all .2s ease; color:var(--text);
+}
+.tag:hover{transform: translateY(-2px); box-shadow: var(--shadow);}
+.tag.active{border-color: var(--accent); color:var(--accent); background:var(--panel); box-shadow: 0 6px 18px color-mix(in srgb, var(--accent) 12%, transparent);}
+
+/* === Команда === */
+.team{display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:14px;}
+.person{text-align:center; border:1px solid var(--border); border-radius:var(--radius); padding:16px; background:var(--panel); box-shadow: var(--shadow); transition: transform .25s, box-shadow .25s;}
+.person:hover{transform: translateY(-4px); box-shadow: var(--shadow-strong);}
+
+/* === Контакты и форма === */
+.contacts-grid{display:grid; grid-template-columns:1fr 1fr; gap:26px; margin-top:14px;}
+.lead-form{max-width:640px;}
+.lead-form .row{display:flex; gap:12px; margin-bottom:10px;}
+.lead-form input,.lead-form textarea{
+  width:100%; padding:12px; border:1px solid var(--border); border-radius:12px; font:inherit; transition: box-shadow .2s, border-color .2s;
+  background:var(--panel); color:var(--text);
+}
+.lead-form input:focus,.lead-form textarea:focus{outline:none; border-color: color-mix(in srgb, var(--accent) 50%, transparent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 12%, transparent);}
+.form-msg{color:var(--muted); margin-top:8px;}
+
+/* === Подвал === */
+.site-footer{border-top:1px solid var(--border); padding:18px 0; color:var(--muted); background:var(--panel);}
+.footer-inner{display:flex; justify-content:space-between; align-items:center;}
+
+/* === Анимации появления === */
+[data-animate]{opacity:1; transform:none;}
+.anim [data-animate]{opacity:0; transform: translateY(14px); transition: transform .6s ease, opacity .6s ease;}
+.anim [data-animate].in{opacity:1; transform: translateY(0);}
+.delay-1{transition-delay:.05s;} .delay-2{transition-delay:.1s;} .delay-3{transition-delay:.15s;}
+
+/* === Адаптив === */
+@media (max-width:900px){
+  .grid3,.team,.contacts-grid{grid-template-columns:1fr;}
+  .main-nav{position:absolute; top:64px; right:4%; background:var(--panel); border:1px solid var(--border); border-radius:14px;
+    display:none; flex-direction:column; gap:10px; padding:12px; box-shadow: var(--shadow);}
+  .main-nav.open{display:flex;}
+  .burger{display:inline-block;}
+  .hero h1{font-size:34px;}
+  .case-card .thumb{aspect-ratio:4/3;}
+}

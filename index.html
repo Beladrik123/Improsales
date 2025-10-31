@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title>ImproSales — обучение продажам и РОПов от практиков</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Обучение продажам и РОПов для собственников и руководителей. Без ошибок — как автошкола: ведём за руку к результату. Кейсы с цифрами." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Шапка + меню -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#home">
+        <img src="img/logo.jpeg" alt="ImproSales" />
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="#home">Главная</a>
+        <a href="#programs">Программы</a>
+        <a href="#cases">Кейсы</a>
+        <a href="#about">О нас</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+
+      <!-- Переключатель темы -->
+     <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+       <span id="themeLabel">Тема: Светлая</span>
+     </button>
+
+      <button class="burger" id="burger" aria-label="Открыть меню"></button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Главная -->
+    <section class="hero" id="home">
+      <div class="container hero-inner">
+        <h1 data-animate>Обучение продажам и РОПов от практиков ImproSales</h1>
+        <p class="lead delay-1" data-animate>
+          Построим отдел продаж без ошибок. Сильный ментор ведёт «как автоинструктор»: пошагово, с реальными кейсами и цифрами.
+        </p>
+        <div class="hero-cta delay-2" data-animate>
+          <a class="btn" href="#contacts">Оставить заявку</a>
+          <a class="btn-outline" href="#cases">Смотреть кейсы</a>
+        </div>
+
+        <ul class="hero-bullets delay-3" data-animate>
+          <li><strong>90%</strong> аудитории — собственники бизнеса в Казахстане</li>
+          <li><strong>70+ компаний</strong> и <strong>200+ тренингов</strong> в портфеле</li>
+          <li>Фокус: <strong>система, цифры, простота</strong></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Программы обучения -->
+    <section class="section" id="programs">
+      <div class="container">
+        <h2 data-animate>Программы обучения</h2>
+
+        <div class="grid3">
+          <article class="card" data-animate>
+            <h3 id="month1">1 месяц — «Продажный фундамент»</h3>
+            <ul class="check">
+              <li>Цели: быстрый рост конверсии</li>
+              <li>Модули: приветствие, диагностика, презентация, возражения, закрытие</li>
+              <li>Формат: онлайн/офлайн, разборы звонков, скрипты</li>
+              <li>Цена: <strong>от 350 000 ₸</strong></li>
+            </ul>
+            <a class="link" href="#contacts">Получить КП</a>
+          </article>
+
+          <article class="card delay-1" data-animate>
+            <h3 id="month3">3 месяца — «Система, которая продаёт»</h3>
+            <ul class="check">
+              <li>М1: фундамент, быстрые победы</li>
+              <li>М2: CRM, автоответы, аналитика, воронки</li>
+              <li>М3: масштабирование, регламенты, KPI</li>
+              <li>Цена: <strong>от 950 000 ₸</strong></li>
+            </ul>
+            <a class="link" href="#contacts">Получить КП</a>
+          </article>
+
+          <article class="card delay-2" data-animate>
+            <h3 id="rops">Обучение для РОПов</h3>
+            <ul class="check">
+              <li>Планирование, 1:1, контроль и рост</li>
+              <li>Набор/адаптация МОП, зарплатные модели</li>
+              <li>Автоворонки и связки с аналитикой</li>
+              <li>Цена: <strong>по запросу</strong></li>
+            </ul>
+            <a class="link" href="#contacts">Обсудить программу</a>
+          </article>
+        </div>
+
+        <div class="center delay-3" style="margin-top: 16px" data-animate>
+          <a class="btn-outline" href="#corporate">Корпоративное обучение (1 день) →</a>
+        </div>
+
+        <div id="corporate" class="card mt-16" data-animate>
+          <h3>Корпоративное обучение — от 1 дня</h3>
+          <p>Интенсив под вашу нишу: оффлайн/онлайн, разбор типовых ситуаций, чек-листы и скрипты под внедрение.</p>
+          <a class="btn" href="#contacts">Запросить программу</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Кейсы -->
+    <section class="section" id="cases">
+      <div class="container">
+        <h2 data-animate>Кейсы по категориям</h2>
+
+        <div class="tags delay-1" id="caseFilters" data-animate></div>
+
+        <div class="cases-grid delay-2" id="casesGrid" data-animate>
+          <!-- Фолбэк (на случай, если JS не загрузится) -->
+          <article class="case-card">
+            <div class="thumb"><img src="img/case1.jpeg" alt="Dress Code" class="logo"></div>
+            <h3>Dress Code — спецодежда</h3>
+            <p class="muted">B2B • Рост повторных заказов</p>
+            <p>Временная карточка. Скрипт подставит реальные данные из массива.</p>
+            <a class="link" href="#contacts">Подробнее →</a>
+          </article>
+          <article class="case-card">
+            <div class="thumb"><img src="img/case2.png" alt="INTANT" class="logo"></div>
+            <h3>INTANT</h3>
+            <p class="muted">B2B • Сокращение цикла сделки</p>
+            <p>Временная карточка. Скрипт подставит реальные данные из массива.</p>
+            <a class="link" href="#contacts">Подробнее →</a>
+          </article>
+        </div>
+
+        <div class="center">
+          <a class="btn-outline" href="#contacts">Хочу такой же результат</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- О нас -->
+    <section class="section" id="about">
+      <div class="container">
+        <h2 data-animate>О нас</h2>
+        <p class="muted" data-animate>Практики рынка Казахстана: <strong>70+ компаний</strong>, <strong>200+ тренингов</strong>, экспертиза в B2B, B2C, IT, медицине и др.</p>
+
+        <div class="team">
+          <article class="person" data-animate>
+            <img src="img/artem.jpeg" alt="Артём Арутюнов" />
+            <h3>Артём Арутюнов</h3>
+            <p>Эксперт по системным продажам.</p>
+          </article>
+          <article class="person delay-1" data-animate>
+            <img src="img/shahriyar.jpeg" alt="Шахрияр Кыдырбекулы" />
+            <h3>Шахрияр Кыдырбекулы</h3>
+            <p>Руководитель проектов ImproSales.</p>
+          </article>
+          <article class="person delay-2" data-animate>
+            <img src="img/gennady.jpeg" alt="Геннадий Ибрагимов" />
+            <h3>Геннадий Ибрагимов</h3>
+            <p>Бизнес-тренер, ментор РОПов.</p>
+          </article>
+        </div>
+
+        <div class="card mt-16" data-animate>
+          <h3>Почему мы</h3>
+          <ul class="check">
+            <li>Упор на внедрение: регламенты, CRM, аналитика, скрипты</li>
+            <li>Простые шаги и понятные цифры — без перегруза</li>
+            <li>Индивидуальная адаптация под нишу и команду</li>
+          </ul>
+          <a class="btn" href="#contacts">Обсудить проект</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Контакты -->
+    <section class="section" id="contacts">
+      <div class="container">
+        <h2 data-animate>Контакты</h2>
+
+        <div class="contacts-grid">
+          <div data-animate>
+            <h3>Связаться</h3>
+            <p>
+              Тел.: <a href="tel:+77000000000">+7 700 000 00 00</a><br />
+              Email: <a href="mailto:hello@improsales.kz">hello@improsales.kz</a>
+            </p>
+            <p class="buttons">
+              <a class="btn-outline" target="_blank" href="https://wa.me/77000000000">WhatsApp</a>
+              <a class="btn-outline" target="_blank" href="https://t.me/improsales">@improsales</a>
+            </p>
+          </div>
+
+          <div data-animate class="delay-1">
+            <h3>Оставить заявку</h3>
+            <form id="leadForm" class="lead-form" autocomplete="on">
+              <input type="text" name="company" style="display:none" tabindex="-1" autocomplete="off" />
+              <div class="row">
+                <input type="text"   name="name"    placeholder="Имя *" required />
+                <input type="tel"    name="phone"   placeholder="Телефон *" required />
+              </div>
+              <div class="row">
+                <input type="email"  name="email"   placeholder="Email" />
+              </div>
+              <textarea name="message" rows="4" placeholder="Комментарий"></textarea>
+              <button type="submit" class="btn">Отправить</button>
+              <p id="formMsg" class="form-msg"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Подвал -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> ImproSales — «как автошкола»: обучаем без ошибок</div>
+      <div><a href="#contacts">Контакты</a></div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
