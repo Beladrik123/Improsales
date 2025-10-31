@@ -50,10 +50,10 @@ if (y) y.textContent = new Date().getFullYear();
 
 /* ===== кейсы ===== */
 const CASES = [
-  { title:'Dress Code — спецодежда', niche:'B2B', result:'Повторные продажи +32% за 3 мес', img:'img/case1.jpeg', excerpt:'CRM-связки, WhatsApp-автоворонки, регламенты 1:1.', link:'#contacts', isLogo:true },
-  { title:'INTANT', niche:'B2B', result:'Цикл сделки −21%', img:'img/case2.png',  excerpt:'Стандартизация прайсов, аналитика, KPI.', link:'#contacts', isLogo:true },
-  { title:'Allergo Clinic', niche:'Медицина', result:'Запись на приём +24%', img:'img/case3.jpeg', excerpt:'Скрипты кол-центра, напоминания, корректные ответы о квалификации.', link:'#contacts', isLogo:true },
-  { title:'Центр молекулярной медицины', niche:'Медицина', result:'Конверсия консультаций +18%', img:'img/case4.jpeg', excerpt:'Онлайн-заявки, маршрут пациента, отчётность по каналам.', link:'#contacts', isLogo:true }
+  { title:'Dress Code — спецодежда', niche:'B2B', result:'Повторные продажи +32% за 3 мес', img:'./img/case1.jpeg', excerpt:'CRM-связки, WhatsApp-автоворонки, регламенты 1:1.', link:'#contacts', isLogo:true },
+  { title:'INTANT', niche:'B2B', result:'Цикл сделки −21%', img:'./img/case2.png',  excerpt:'Стандартизация прайсов, аналитика, KPI.', link:'#contacts', isLogo:true },
+  { title:'Allergo Clinic', niche:'Медицина', result:'Запись на приём +24%', img:'./img/case3.jpeg', excerpt:'Скрипты кол-центра, напоминания, корректные ответы о квалификации.', link:'#contacts', isLogo:true },
+  { title:'Центр молекулярной медицины', niche:'Медицина', result:'Конверсия консультаций +18%', img:'./img/case4.jpeg', excerpt:'Онлайн-заявки, маршрут пациента, отчётность по каналам.', link:'#contacts', isLogo:true }
 ];
 const CASE_CATEGORIES = ['Все','B2B','Медицина'];
 const filtersWrap = document.getElementById('caseFilters');
