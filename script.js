@@ -1,12 +1,12 @@
-// включаем режим анимаций
+// включаем анимации
 document.documentElement.classList.add('anim');
 
 const root = document.documentElement;
 const themeToggle = document.getElementById('themeToggle');
 
-/* ===== тема: автодетект + переключатель с текстом ===== */
+// Тема
 (function initTheme(){
-  const saved = localStorage.getItem('theme'); // 'light' | 'dark' | null
+  const saved = localStorage.getItem('theme');
   if (saved === 'dark') root.classList.add('theme-dark');
   if (saved === 'light') root.classList.remove('theme-dark');
   updateThemeLabel();
@@ -22,11 +22,9 @@ function switchTheme(){
   localStorage.setItem('theme', isDark ? 'dark' : 'light');
   updateThemeLabel();
 }
-if (themeToggle){
-  themeToggle.addEventListener('click', switchTheme);
-}
+if (themeToggle) themeToggle.addEventListener('click', switchTheme);
 
-/* ===== шапка ===== */
+// Шапка
 const header = document.querySelector('.site-header');
 const burger = document.getElementById('burger');
 const mainNav = document.getElementById('mainNav');
@@ -44,11 +42,11 @@ function onScrollHeader() {
 onScrollHeader();
 addEventListener('scroll', onScrollHeader);
 
-/* ===== год в подвале ===== */
+// Год
 const y = document.getElementById('year');
 if (y) y.textContent = new Date().getFullYear();
 
-/* ===== кейсы ===== */
+// Кейсы
 const CASES = [
   { title:'Dress Code — спецодежда', niche:'B2B', result:'Повторные продажи +32% за 3 мес', img:'case1.jpeg', excerpt:'CRM-связки, WhatsApp-автоворонки, регламенты 1:1.', link:'#contacts', isLogo:true },
   { title:'INTANT', niche:'B2B', result:'Цикл сделки −21%', img:'case2.png', excerpt:'Стандартизация прайсов, аналитика, KPI.', link:'#contacts', isLogo:true },
@@ -93,7 +91,7 @@ if (filtersWrap){
   });
 }
 
-/* ===== ripple ===== */
+// Ripple эффект
 document.querySelectorAll('.btn, .btn-outline').forEach(btn=>{
   btn.addEventListener('pointerdown',(e)=>{
     const rect = btn.getBoundingClientRect();
@@ -102,13 +100,13 @@ document.querySelectorAll('.btn, .btn-outline').forEach(btn=>{
   });
 });
 
-/* ===== появление секций ===== */
+// Анимация появления
 const io = new IntersectionObserver((entries)=>{
   entries.forEach(entry=>{ if(entry.isIntersecting) entry.target.classList.add('in'); });
 },{threshold:.15});
 document.querySelectorAll('[data-animate]').forEach(el=>io.observe(el));
 
-/* ===== активный пункт меню ===== */
+// Активный пункт меню
 const sections = Array.from(document.querySelectorAll('main > section[id]'));
 const navLinks = Array.from(document.querySelectorAll('#mainNav a[href^="#"]'));
 function highlightNav(){
